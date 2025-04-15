@@ -39,7 +39,7 @@
                         // Subtraction
                         Console.WriteLine("Subtraction");
                         var numSub = numbersCalculation.NumbersValidation();
-                        var opSubResult = operation.Addition(numSub.num1, numSub.num2);
+                        var opSubResult = operation.Subtraction(numSub.num1, numSub.num2);
                         Console.WriteLine(opSubResult);
 
                         break;
@@ -47,7 +47,7 @@
                         // Multiplication
                         Console.WriteLine("Multiplication");
                         var numMult = numbersCalculation.NumbersValidation();
-                        var opMulResult = operation.Addition(numMult.num1, numMult.num2);
+                        var opMulResult = operation.Multiplication(numMult.num1, numMult.num2);
                         Console.WriteLine(opMulResult);
 
                         break;
