@@ -22,36 +22,40 @@
                     }
 
                 var operation = new MathOperation();
-                
+                var numbersCalculation = new HelperMethods();
+
+
                 switch (userInput)
                 {
                     case 1:
+                        // Addition
                         Console.WriteLine("Addition");
+                        var numAdd = numbersCalculation.NumbersValidation();
+                       
                         break;
                     case 2:
+                        // Subtraction
                         Console.WriteLine("Subtraction");
+                        var numSub = numbersCalculation.NumbersValidation();
+                        
+
                         break;
                     case 3:
+                        // Multiplication
                         Console.WriteLine("Multiplication");
+                        var numMult = numbersCalculation.NumbersValidation();
+
                         break;
                     case 4:
+                        // Division
                         Console.WriteLine("Division");
-                        Console.Write("Enter the first number: ");
-                        if (!int.TryParse(Console.ReadLine(), out int num1)) 
-                                {
-                                }
-                        Console.Write("Enter the second number: ");
-                        if (!int.TryParse(Console.ReadLine(), out int num2)) 
-                                {
-                                    Console.WriteLine("Invalid input! Please enter a valid integer");
-                                    break;
-                                }
-                        while (num2 == 0)
+                        var numDiv = numbersCalculation.NumbersValidation();
+                        while (numDiv.num2 == 0)
                         {
                             Console.Write("Enter a non-zero divisor: ");
-                            num2 = Convert.ToInt32(Console.ReadLine());
+                            numDiv.num2 = Convert.ToInt32(Console.ReadLine());
                         }
-                        var opResult = operation.Division(num1, num2);
+                        var opResult = operation.Division(numDiv.num1, numDiv.num2);
                         Console.WriteLine(opResult);                       
                         break;
                     case 5:
@@ -61,10 +65,8 @@
                     default:
                         break;
                 }
-
             }
         }
-
 
     }
 }
