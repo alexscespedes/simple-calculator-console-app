@@ -68,6 +68,7 @@
                         exit = true;
                         break;
                     default:
+                        Console.WriteLine("Invalid option. Try again!");
                         break;
                 }
             }
