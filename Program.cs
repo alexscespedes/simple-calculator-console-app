@@ -31,19 +31,24 @@
                         // Addition
                         Console.WriteLine("Addition");
                         var numAdd = numbersCalculation.NumbersValidation();
+                        var opAddResult = operation.Addition(numAdd.num1, numAdd.num2);
+                        Console.WriteLine(opAddResult);
                        
                         break;
                     case 2:
                         // Subtraction
                         Console.WriteLine("Subtraction");
                         var numSub = numbersCalculation.NumbersValidation();
-                        
+                        var opSubResult = operation.Addition(numSub.num1, numSub.num2);
+                        Console.WriteLine(opSubResult);
 
                         break;
                     case 3:
                         // Multiplication
                         Console.WriteLine("Multiplication");
                         var numMult = numbersCalculation.NumbersValidation();
+                        var opMulResult = operation.Addition(numMult.num1, numMult.num2);
+                        Console.WriteLine(opMulResult);
 
                         break;
                     case 4:
@@ -55,8 +60,8 @@
                             Console.Write("Enter a non-zero divisor: ");
                             numDiv.num2 = Convert.ToInt32(Console.ReadLine());
                         }
-                        var opResult = operation.Division(numDiv.num1, numDiv.num2);
-                        Console.WriteLine(opResult);                       
+                        var opDivResult = operation.Division(numDiv.num1, numDiv.num2);
+                        Console.WriteLine(opDivResult);                       
                         break;
                     case 5:
                         Console.WriteLine("Goodbye!");
