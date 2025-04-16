@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             bool exit = false;
+            bool confirmation;
             while (!exit)
             {
                 Console.WriteLine("Welcome to the Simple Calculator Console App");
@@ -28,30 +29,44 @@
                 switch (userInput)
                 {
                     case 1:
+                        do
+                        {
                         // Addition
                         Console.WriteLine("Addition");
                         var numAdd = numbersCalculation.NumbersValidation();
                         var opAddResult = operation.Addition(numAdd.num1, numAdd.num2);
                         Console.WriteLine(opAddResult);
-                       
+
+                        confirmation = numbersCalculation.MultipleCalculation();
+                        } while (confirmation);
                         break;
                     case 2:
+                        do
+                        {
                         // Subtraction
                         Console.WriteLine("Subtraction");
                         var numSub = numbersCalculation.NumbersValidation();
                         var opSubResult = operation.Subtraction(numSub.num1, numSub.num2);
                         Console.WriteLine(opSubResult);
 
+                        confirmation = numbersCalculation.MultipleCalculation();
+                        } while (confirmation);
                         break;
                     case 3:
+                        do
+                        {
                         // Multiplication
                         Console.WriteLine("Multiplication");
                         var numMult = numbersCalculation.NumbersValidation();
                         var opMulResult = operation.Multiplication(numMult.num1, numMult.num2);
                         Console.WriteLine(opMulResult);
 
+                        confirmation = numbersCalculation.MultipleCalculation();
+                        } while (confirmation);
                         break;
                     case 4:
+                        do
+                        {
                         // Division
                         Console.WriteLine("Division");
                         var numDiv = numbersCalculation.NumbersValidation();
@@ -61,7 +76,10 @@
                             numDiv.num2 = Convert.ToInt32(Console.ReadLine());
                         }
                         var opDivResult = operation.Division(numDiv.num1, numDiv.num2);
-                        Console.WriteLine(opDivResult);                       
+                        Console.WriteLine(opDivResult);   
+
+                        confirmation = numbersCalculation.MultipleCalculation();
+                        } while (confirmation);                    
                         break;
                     case 5:
                         Console.WriteLine("Goodbye!");

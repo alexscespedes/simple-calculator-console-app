@@ -18,5 +18,24 @@ namespace SimpleCalculator
 
             return (num1, num2);
         }
+
+        public bool MultipleCalculation() {
+            Console.Write("Do you want to perform another calculation (Y/N): ");
+            string? userConfirmation = Console.ReadLine()?.Trim().ToUpper();
+                                        
+            if (userConfirmation == "N" || userConfirmation == "NO")
+            {
+                return false;
+            }
+            else if (userConfirmation == "Y" || userConfirmation == "YES")
+            {
+                return true;
+            }
+            else 
+            {
+                Console.WriteLine("Invalid input!");
+                return false;
+            }
+        }
     }
 }
