@@ -6,7 +6,7 @@ namespace SimpleCalculator
 
         public double Result { get; set; }
 
-        public string MathOperation { get; set; }
+        public char MathOperation { get; set; }
 
         Queue<CalculationHistory> history = new Queue<CalculationHistory>();
 
@@ -14,14 +14,14 @@ namespace SimpleCalculator
             
         }
 
-        public CalculationHistory(double firstNumber, double secondNumber, double result, string mathOperation) {
+        public CalculationHistory(double firstNumber, double secondNumber, double result, char mathOperation) {
             FirstNumber = firstNumber;
             SecondNumber = secondNumber;
             Result = result;
             MathOperation = mathOperation;
         }
 
-        public void AddCalculationHistory (double firstNumber, double secondNumber, double result, string mathOperation) {
+        public void AddCalculationHistory (double firstNumber, double secondNumber, double result, char mathOperation) {
             if (history.Count == 5)
             {
                 history.Dequeue();
@@ -30,7 +30,15 @@ namespace SimpleCalculator
         }
 
         public void DisplayCalculationHistory () {
+            if (history.Count == 0)
+            {
+                Console.WriteLine("The queue is empty");
+            }
 
+            foreach (var calc in history)
+            {
+                Console.WriteLine($"{calc.FirstNumber} {calc.MathOperation} {calc.SecondNumber} = {calc.Result}");
+            }
         }
     }
 }
