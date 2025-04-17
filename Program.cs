@@ -25,7 +25,7 @@
 
                 var operation = new MathOperation();
                 var numbersCalculation = new HelperMethods();
-                Queue<CalculationHistory> history = new Queue<CalculationHistory>();
+                var calculationHistory = new CalculationHistory();
 
 
                 switch (userInput)
@@ -39,11 +39,7 @@
                         var addOpResult = operation.Addition(numAdd.num1, numAdd.num2);
                         Console.WriteLine(addOpResult);
                         // history Calculation Feature
-                        if (history.Count == 5)
-                        {
-                            history.Dequeue();
-                        }
-                        history.Enqueue(new CalculationHistory (numAdd.num1, numAdd.num2, addOpResult, "Addition"));
+                        calculationHistory.AddCalculationHistory(numAdd.num1, numAdd.num2, addOpResult, "Addition");
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
@@ -56,6 +52,8 @@
                         var numSub = numbersCalculation.NumbersValidation();
                         var subOpResult = operation.Subtraction(numSub.num1, numSub.num2);
                         Console.WriteLine(subOpResult);
+                        // history Calculation Feature
+                        calculationHistory.AddCalculationHistory(numSub.num1, numSub.num2, subOpResult, "Addition");
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
@@ -68,6 +66,8 @@
                         var numMult = numbersCalculation.NumbersValidation();
                         var mulOpResult = operation.Multiplication(numMult.num1, numMult.num2);
                         Console.WriteLine(mulOpResult);
+                        // history Calculation Feature
+                        calculationHistory.AddCalculationHistory(numMult.num1, numMult.num2, mulOpResult, "Addition");
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
@@ -85,13 +85,16 @@
                         }
                         var divOpResult = operation.Division(numDiv.num1, numDiv.num2);
                         Console.WriteLine(divOpResult);   
+                        // history Calculation Feature
+                        calculationHistory.AddCalculationHistory(numDiv.num1, numDiv.num2, divOpResult, "Addition");
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);                    
                         break;
                     case 5:
                         Console.WriteLine("Display the history of calculation");
-                        exit = true;
+
+                        // exit = true;
                         break;
                     case 6:
                         Console.WriteLine("Goodbye!");
