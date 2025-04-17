@@ -39,6 +39,12 @@
                         var addOpResult = operation.Addition(numAdd.num1, numAdd.num2);
                         Console.WriteLine(addOpResult);
                         // history Calculation Feature
+                        if (history.Count == 5)
+                        {
+                            history.Dequeue();
+                        }
+                        history.Enqueue(new CalculationHistory (numAdd.num1, numAdd.num2, addOpResult, "Addition"));
+
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
                         break;
