@@ -13,7 +13,8 @@
                 Console.WriteLine("2 for Subtraction");
                 Console.WriteLine("3 for Multiplication");
                 Console.WriteLine("4 for Division");
-                Console.WriteLine("5 for Exit the program");
+                Console.WriteLine("5 for Display the calculation history");
+                Console.WriteLine("6 for Exit the program");
                 Console.Write("Choose an option: ");
 
                 if (!int.TryParse(Console.ReadLine(), out int userInput)) 
@@ -24,6 +25,7 @@
 
                 var operation = new MathOperation();
                 var numbersCalculation = new HelperMethods();
+                Queue<CalculationHistory> history = new Queue<CalculationHistory>();
 
 
                 switch (userInput)
@@ -82,6 +84,10 @@
                         } while (confirmation);                    
                         break;
                     case 5:
+                        Console.WriteLine("Display the history of calculation");
+                        exit = true;
+                        break;
+                    case 6:
                         Console.WriteLine("Goodbye!");
                         exit = true;
                         break;
