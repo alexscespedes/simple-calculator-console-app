@@ -36,9 +36,9 @@
                         // Addition
                         Console.WriteLine("Addition");
                         var numAdd = numbersCalculation.NumbersValidation();
-                        var opAddResult = operation.Addition(numAdd.num1, numAdd.num2);
-                        Console.WriteLine(opAddResult);
-
+                        var addOpResult = operation.Addition(numAdd.num1, numAdd.num2);
+                        Console.WriteLine(addOpResult);
+                        // history Calculation Feature
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
                         break;
@@ -48,8 +48,8 @@
                         // Subtraction
                         Console.WriteLine("Subtraction");
                         var numSub = numbersCalculation.NumbersValidation();
-                        var opSubResult = operation.Subtraction(numSub.num1, numSub.num2);
-                        Console.WriteLine(opSubResult);
+                        var subOpResult = operation.Subtraction(numSub.num1, numSub.num2);
+                        Console.WriteLine(subOpResult);
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
@@ -60,8 +60,8 @@
                         // Multiplication
                         Console.WriteLine("Multiplication");
                         var numMult = numbersCalculation.NumbersValidation();
-                        var opMulResult = operation.Multiplication(numMult.num1, numMult.num2);
-                        Console.WriteLine(opMulResult);
+                        var mulOpResult = operation.Multiplication(numMult.num1, numMult.num2);
+                        Console.WriteLine(mulOpResult);
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);
@@ -77,8 +77,8 @@
                             Console.Write("Enter a non-zero divisor: ");
                             numDiv.num2 = Convert.ToInt32(Console.ReadLine());
                         }
-                        var opDivResult = operation.Division(numDiv.num1, numDiv.num2);
-                        Console.WriteLine(opDivResult);   
+                        var divOpResult = operation.Division(numDiv.num1, numDiv.num2);
+                        Console.WriteLine(divOpResult);   
 
                         confirmation = numbersCalculation.MultipleCalculation();
                         } while (confirmation);                    
