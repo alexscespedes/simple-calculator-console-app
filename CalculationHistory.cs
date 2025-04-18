@@ -40,5 +40,11 @@ namespace SimpleCalculator
                 Console.WriteLine($"{calc.FirstNumber} {calc.MathOperation} {calc.SecondNumber} = {calc.Result}");
             }
         }
+
+        public void ClearCalculationHistory () {
+            
+            history.Clear();
+            Console.WriteLine("Calculation history cleared.");
+        }
     }
 }

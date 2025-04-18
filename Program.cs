@@ -16,7 +16,8 @@
                 Console.WriteLine("3 for Multiplication");
                 Console.WriteLine("4 for Division");
                 Console.WriteLine("5 for Display the calculation history");
-                Console.WriteLine("6 for Exit the program");
+                Console.WriteLine("6 for Clear Calculation History");
+                Console.WriteLine("7 for Exit the program");
                 Console.Write("Choose an option: ");
 
                 if (!int.TryParse(Console.ReadLine(), out int userInput)) 
@@ -81,7 +82,7 @@
                         while (numDiv.num2 == 0)
                         {
                             Console.Write("Enter a non-zero divisor: ");
-                            numDiv.num2 = Convert.ToInt32(Console.ReadLine());
+                            numDiv.num2 = Convert.ToDouble(Console.ReadLine());
                         }
                         var divOpResult = operation.Division(numDiv.num1, numDiv.num2);
                         Console.WriteLine(divOpResult);   
@@ -96,6 +97,9 @@
                         calculationHistory.DisplayCalculationHistory();
                         break;
                     case 6:
+                        calculationHistory.ClearCalculationHistory();
+                        break;
+                    case 7:
                         Console.WriteLine("Goodbye!");
                         exit = true;
                         break;

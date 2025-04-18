@@ -1,21 +1,25 @@
 namespace SimpleCalculator
 {
     public class HelperMethods {
-        // private List<double> numbers = new List<double>();
         public (double num1, double num2) NumbersValidation() {
-            Console.Write("Enter the first number: ");
-            if (!int.TryParse(Console.ReadLine(), out int num1)) 
-                {
-                    Console.WriteLine("Invalid input! Please enter a valid integer");
-                }
-            // numbers.Add(num1);
-            Console.Write("Enter the second number: ");
-            if (!int.TryParse(Console.ReadLine(), out int num2)) 
-                {
-                    Console.WriteLine("Invalid input! Please enter a valid integer");
-                }
-            // numbers.Add(num2);
 
+            double num1, num2;
+
+            while(true) 
+            {
+                Console.Write("Enter the first number: ");
+                if (double.TryParse(Console.ReadLine(), out num1)) 
+                    break;
+                Console.WriteLine("Invalid input! Please enter a valid number");                
+            }
+
+            while(true) 
+            {
+                Console.Write("Enter the second number: ");
+                if (double.TryParse(Console.ReadLine(), out num2)) 
+                    break;
+                Console.WriteLine("Invalid input! Please enter a valid number");                
+            }
             return (num1, num2);
         }
 
